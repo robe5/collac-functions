@@ -1,0 +1,36 @@
+{
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "npm run lint && tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@sendinblue/client": "^3.3.1",
+    "@types/node": "^18.15.11",
+    "axios": "^0.27.2",
+    "firebase-admin": "^11.7.0",
+    "firebase-functions": "^4.4.1",
+    "request": "^2.88.2",
+    "stripe": "^8.191.0"
+  },
+  "devDependencies": {
+    "@types/request": "^2.48.8",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "eslint": "^8.38.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.27.5",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^5.0.4"
+  },
+  "private": true
+}
